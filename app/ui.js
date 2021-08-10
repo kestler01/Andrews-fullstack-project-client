@@ -1,6 +1,8 @@
 const store = require('./store.js')
 const Modal = require('bootstrap').Modal
-
+// if (response.user.pieces.length !== 0) {
+//   response.user.pieces.forEach((piece) => drawPieceCard(piece)); // here we iterate over the array, but I could start an index request instead ?
+// }
 const drawPieceCard = function (piece) {
   // look up the piece data, ! - would be a separate api call for each !?! f no- must populate that array on call first.
   const { name, medium, description, link } = piece
@@ -45,9 +47,6 @@ const onSignInSuccess = function (response) {
   $('#update-profile-bio-field').val(response.user.bio)
   // need to get user data from api, and change view to user 'homepage'
   store.user = response.user
-  if (store.user.pieces !== []) {
-    store.user.pieces.forEach(piece => drawPieceCard(piece)) // here we iterate over the array, but I could start an index request instead
-  }
   console.log(store)
   myModal._hideModal() // do not know why but hide and toggle methods are not working in this scenario with a submit and reset of the form before the hide.
   $('.modal-backdrop').hide() // janky but traditional modal methods aren't working here for some reason
