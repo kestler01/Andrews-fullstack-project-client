@@ -2,3 +2,43 @@
 .startHidden{
   display:none
 }
+
+.card-sleeve{
+  height: 25%;
+}
+
+.navbar-container{
+  justify-content:space-around
+}
+#message-field{
+  text-align: center;
+  margin:0 auto;
+}
+body{
+background: rgb(47,52,65);
+background: linear-gradient(90deg, rgba(47,52,65,1) 0%, rgba(94,119,158,1) 50%, rgba(47,52,65,1) 100%);
+}
+
+.btn{
+  background: rgb(29,30,34);
+background: linear-gradient(30deg, rgba(29,30,34,1) 0%, rgba(186,188,191,1) 50%, rgba(29,30,34,1) 100%);
+}
+
+#sign-up-form-modal {
+background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,0.8463760504201681) 30%, rgba(83,255,100,1) 50%, rgba(0,0,0,0.8547794117647058) 70%);
+}
+
+#sign-in-form-modal {background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,0.8463760504201681) 30%, rgba(83,173,255,1) 50%, rgba(0,0,0,0.8547794117647058) 70%);
+}
+
+.modal-content{
+    background: rgb(29,30,34);
+background: linear-gradient(30deg, rgba(29,30,34,1) 0%, rgba(186,188,191,1) 50%, rgba(29,30,34,1) 100%);
+}
+[input]{
+  color:white;
+    background: rgb(29,30,34);
+background: linear-gradient(120deg, rgba(29,30,34,1) 0%, rgba(186,188,191,1) 50%, rgba(29,30,34,1) 100%);
+}

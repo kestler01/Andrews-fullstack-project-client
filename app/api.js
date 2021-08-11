@@ -49,10 +49,48 @@ const signOut = function () {
   })
 }
 
+const newPiece = function (dataObj) {
+  return $.ajax({
+    url: config.apiUrl + '/pieces',
+    method: 'post',
+    headers: { Authorization: 'Bearer ' + store.user.token },
+    data: dataObj
+  })
+}
+
+const getPieces = function () {
+  return $.ajax({
+    url: config.apiUrl + '/pieces',
+    method: 'get',
+    headers: { Authorization: 'Bearer ' + store.user.token }
+  })
+}
+
+const updatePiece = function (dataObj) {
+  return $.ajax({
+    url: config.apiUrl + '/pieces/' + store.pieceId,
+    method: 'patch',
+    headers: { Authorization: 'Bearer ' + store.user.token },
+    data: dataObj
+  })
+}
+
+const deletePiece = function () {
+  return $.ajax({
+    url: config.apiUrl + '/pieces/' + store.pieceId,
+    method: 'delete',
+    headers: { Authorization: 'Bearer ' + store.user.token }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePw,
   signOut,
-  updateProfile
+  updateProfile,
+  newPiece,
+  getPieces,
+  updatePiece,
+  deletePiece
 }
