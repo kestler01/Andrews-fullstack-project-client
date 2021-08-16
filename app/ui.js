@@ -17,7 +17,6 @@ const drawPieceCard = function (piece) {
         <h5 class="card-title">${name} : ${medium} </h5>
         <p class="card-text">${description}</p>
         <a href="#" class="btn btn-primary dynamic-edit-piece-button"> open update modal </a>
-        <a href="#" class="btn btn-primary"> open image modal </a>
       </div>
     </div>
   </div>
@@ -115,7 +114,11 @@ const onNewPieceFailure = function (response) {
 }
 const onGetPiecesSuccess = function (response) {
   console.log(response)
+  $('#message-field').text('')
   $('#pieces-landing-pad').html('')
+  if (!response.pieces) {
+    $('#message-field').text(' You don\'t have any pieces yet')
+  }
   response.pieces.forEach(piece => drawPieceCard(piece))
 }
 const onGetPiecesFailure = function (response) {
