@@ -1,21 +1,23 @@
-# Full Stack Project Practice
 
-Be prepared to discuss these items with a consultant during a 1 on 1.
-
-You may use GitHub, PowerPoint, Keynote, or any other tools you desire to
-complete any part of this.
-
-## Project Idea
-
-What is your project idea?  How did you come up with it? Why? Who would use it?
-
+## Andrew's Art Blog:
 ```md
-I want to make an app to keep track of current members to an art association, and their submitted art for shows, sales, member fees etc. (financial data will NOT be stored in db)
-My fiance just became a gallery manager at the New Hampshire Art Association (a non-profit art organization based in Portsmouth NH) and they currently use a poorly maintained excel spreadsheet, which no longer has a steward (the member in-charge of data entry just quit). The board doesn't want to spend/ can't spend/ doesn't have money on a subscription to an existing framework / software. 
-The intended users are the artist members, the gallery manager of the association, the book keeper, board members and the 2 other employees. artist members are intended to have permissions over their own pieces, while the employees have a higher level of access and 
+I wrote this application as a project for the General Assembly Software Engineering Immersive in Aug of 2021. The Objective is to develope a fullstack application to demonstrate how to use our class lessons and bring them together to create a SPA. This Art gallery app demonstrates a strong understanding of these idea's by allowing a user to create and edit art pieces which they upload after signing up, establishing a 1 to many relationship. These pieces are not visible to other users via authenticated routes and you must be signed in to use the app. A stretch goal, which currently is unfinished is to add another 'show' resource, which a user could create, and add pieces to, and then share, edit and delete. With the implementation of 'show's the home view would require added functionality to be populated by other user's shared shows, which would complete the initial vision.
 ```
 
-## Write between 3-5 user stories
+## Project Idea/Story
+```md
+Original Concept and Inspiration:
+I want to make an app to keep track of current members to an art association, and their submitted art for shows, sales, member fees etc. (financial data will NOT be stored in db)
+My fiance just became a gallery manager at the New Hampshire Art Association (a non-profit art organization based in Portsmouth NH) and they currently use a poorly maintained excel spreadsheet, which no longer has a steward (the member in-charge of data entry just quit). The board doesn't want to spend/ can't spend/ doesn't have money on a subscription to an existing framework / software. 
+The intended users are the artist members, the gallery manager of the association, the book keeper, board members and the 2 other employees. artist members are intended to have permissions over their own pieces... I could go on But:
+
+As I was flushing out the project, it quickly became apparent that the entirety of the app was far beyond the scope of the class project I had 4 days to complete. So I boiled it down to version 1 v1: allows a user to sign up, sign in, change password, and sign out.
+a User can also generate a resource in a 1 to many relationship (art pieces) which can be viewed, updated, and destroyed. 
+At the time of writing and presentation this app is currently v1.5.
+with some modal and css in a vague Star Wars esc theme 
+```
+
+## User Stories
 
 We have gone over this before. Please refer to your notes, previous repos or the
 google machine if you need further assistance.
