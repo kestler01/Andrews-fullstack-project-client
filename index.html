@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Andrew's Art Gallery</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+      <div class="navbar" color="gray-500">
+        <div class="container-fluid row " id="navbar-container">
+
+          <!-- make drop down menu on navbar, have sign in change the tex of the top button and hide/ show the appropriate dropping buttons-->
+
+          <!-- button for opening account form modal -->
+          <button type="button" id="sign-up-button" class="col-4 btn " data-bs-toggle="modal"
+            data-bs-target="#sign-up-form-modal">Make an Account</button>
+
+          <!-- button for opening sign in form modal -->
+          <button type="button" id="sign-in-button" class="col-4 btn " data-bs-toggle="modal"
+            data-bs-target="#sign-in-form-modal"> Sign In</button>
+
+          <!-- button for opening password change form modal -->
+          <button type="button" id="change-pw-button" class="col-4 btn  startHidden" data-bs-toggle="modal"
+            data-bs-target="#pw-change-form-modal"> Change Password</button>
+
+          <!-- button for opening update profile form modal -->
+            <button type="button" id="update-profile-button" class="col-4 btn  startHidden" data-bs-toggle="modal"
+              data-bs-target="#update-profile-form-modal"> Edit Profile</button>
+
+          <button id="sign-out-button" class="col-4 btn  startHidden">Sign out</button>
+
+        </div>
+      </div>
+
+      <!-- start login vs sign up prompt -->
+      <p id="message-field">Please Make an Account or Sign In to Continue</p>
+      <!-- end of start prompt -->
+
+      <!-- sign up form modal -->
+      <div class="modal fade" id="sign-up-form-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Make an Account</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="sign-up">
+              <div class="modal-body">
+                <div id="sign-up-form-message"></div>
+                <div class="container row">
+                  <label class="col-4">User name</label>
+                  <input class="col-9" name="credentials[user_name]" type="name">
+                  <label class="col-4">Email</label>
+                  <input class="col-9" name="credentials[email]" type="email">
+                  <label class="col-4">Password</label>
+                  <input class="col-9" name="credentials[password]" type="password">
+                  <label class="col-6">Confirm Password</label>
+                  <input class="col-9" name="credentials[password_confirmation]" type="password">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn ">Sign Up</button>
+                <button id="sign-up-flip-in-button" class="btn  startHidden" data-bs-target="#sign-in-form-modal"
+                  data-bs-toggle="modal" data-bs-dismiss="modal">sign in</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End of sign up modal -->
+
+      <!-- Sign in form modal-->
+      <div class="modal fade" id="sign-in-form-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Sign In</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="sign-in">
+              <p id="sign-in-form-message"></p>
+              <div class="modal-body">
+                <div class="container row">
+                  <label class="col-4 ">Email</label>
+                  <input class="col-9 " name="credentials[email]" type="email">
+                  <label class="col-4 ">Password</label>
+                  <input class="col-9 " name="credentials[password]" type="password">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn ">Sign In</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End of sign in modal -->
+
+      <!-- Start of password change form modal -->
+      <div class="modal fade" id="pw-change-form-modal" tabindex="-1" aria-labelledby="change password form"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" >Change Password</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="change-password">
+              <div class="modal-body row">
+                <div class="col-9" id="pw-change-message-field"></div>
+                <label class="col-6">Old Password</label>
+                <input class="col-9" name="passwords[old]" type="password">
+                <label class="col-6">New Password</label>
+                <input class="col-9" name="passwords[new]" type="password">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn ">Change Password</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End of change password form modal -->
+
+      <!-- Start of update profile for modal -->
+      <div class="modal fade" id="update-profile-form-modal" tabindex="-1" aria-labelledby="profile form"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" >Update your Profile</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="update-profile">
+              <div class="modal-body row">
+                <div class="col-9" id="update-profile-message-field"></div>
+                <label class="col-6">User name</label>
+                <input class="col-9" id="update-profile-username-field" name="user[userName]" type="name" value="">
+                <label class="col-6">mediums</label>
+                <input class="col-9" id="update-profile-mediums-field" name="user[mediums]" type="text" value="">
+                <label class="col-6">bio</label>
+                <input class="col-9" id="update-profile-bio-field" name="user[bio]" type="text" value="">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn ">Update</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- end of update profile form modal -->
+
+      <!-- Start of new Piece form modal -->
+      <div class="modal fade" id="new-piece-form-modal" tabindex="-1" aria-labelledby="profile form" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Submit a new Piece</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="new-piece">
+              <div class="modal-body row">
+                <div class="col-9" id="new-piece-message-field"></div>
+                <label class="col-6">Piece name</label>
+                <input class="col-9" id="new-piece-name-field" name="piece[name]" type="name" value="">
+                <label class="col-6">medium</label>
+                <input class="col-9" id="new-piece-medium-field" name="piece[medium]" type="text" value="">
+                <label class="col-6">description</label>
+                <input class="col-9" id="new-piece-description-field" name="piece[description]" type="text" value="">
+                <label class="col-6">link</label>
+                <input class="col-9" id="new-piece-link-field" name="piece[link]" type="text" value="">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn ">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End of new piece form modal -->
+
+      <div class="modal fade" id="update-piece-form-modal" tabindex="-1" aria-labelledby="profile form" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Edit This Piece</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="update-piece">
+              <div class="modal-body row">
+                <div class="col-9" id="update-piece-message-field"></div>
+                <label class="col-6">Piece name</label>
+                <input class="col-9" id="update-piece-name-field" name="piece[name]" type="name" value="">
+                <label class="col-6">medium</label>
+                <input class="col-9" id="update-piece-medium-field" name="piece[medium]" type="text" value="">
+                <label class="col-6">description</label>
+                <input class="col-9" id="update-piece-description-field" name="piece[description]" type="text" value="">
+                <label class="col-6">link</label>
+                <input class="col-9" id="update-piece-link-field" name="piece[link]" type="text" value="">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="delete-Piece-Button" data-bs-dismiss="modal">Delete</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn ">Submit</button>
+                
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End of new piece form modal -->
+
+      <!-- Start of pop up message field modal-->
+      <div class="modal fade" id="pop-up-message-field-modal" tabindex="-1" aria-labelledby="message" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" >Game Over</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p id="pop-up-message-field"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">View Board</button>
+              <button type="button" class="btn btn-secondary new-game-button" data-bs-dismiss="modal">New Game</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of pop up message field modal-->
+
+      <section class="container-fluid startHidden" id="userPage">
+        <div class="row">
+          <div class=" col-12 col-sm-2 row-col-1">
+              <!-- <div class="col" id="user-profilePic-home-view">profile pic link</div> -->
+              <h6 class="col" >User Name:</h6>
+              <div class="col" id="user-name-home-view">some userName</div>
+              <h6 class="col" >Primary Mediums:</h6>
+              <div class="col" id="user-medium-home-view">some mediums</div>
+              <h6 class="col">About Me:</h6>
+              <div class="col" id="user-bio-home-view">some bio thats very long but i want to see the edge of my container so wth </div>
+          </div>
+          <div class=" col-12 col-sm-10" >
+            <div class ="row" id="gallery-header">
+              <span class= "col" >my gallery</span>
+              <button type="button" id="get-pieces-button" class="col-3 btn-sm "> My pieces </button>
+              <button type="button" id="new-piece-button" class="col-3 btn-sm " data-bs-toggle="modal"
+                data-bs-target="#new-piece-form-modal">New Piece</button>
+            </div>
+              <!-- START OF LANDING PAD -->
+              <div class=" row row-col-sm-2 row-col-lg-4 row-col-3 align-items-start gy-3" id="pieces-landing-pad">
+              </div>
+          </div>
+        </div>
+      </section>
+    </body>
+</html>
