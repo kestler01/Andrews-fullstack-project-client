@@ -36,6 +36,7 @@ const onSignUpFailure = function () {
 const onSignInSuccess = function (response) {
   const myModal = new Modal($('#sign-in-form-modal'))
   console.log(response)
+  $('#sign-in-form-message').text('')
   $('#message-field').text(`Welcome ${response.user.userName}`)
   $('#sign-up-button').hide()
   $('#sign-in-button').hide()
@@ -58,6 +59,7 @@ const onSignInSuccess = function (response) {
 }
 
 const onSignInFailure = function () {
+  $('#sign-in-form-message').text('sign in failure')
   $('#message-field').text('sign in failure')
   $('#sign-in').trigger('reset')
 }
@@ -116,7 +118,7 @@ const onGetPiecesSuccess = function (response) {
   console.log(response)
   $('#message-field').text('')
   $('#pieces-landing-pad').html('')
-  if (!response.pieces) {
+  if (response.pieces.length === 0 || !response.pieces) {
     $('#message-field').text(' You don\'t have any pieces yet')
   }
   response.pieces.forEach(piece => drawPieceCard(piece))
