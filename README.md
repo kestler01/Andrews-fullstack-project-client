@@ -52,6 +52,18 @@ with some modal and css in a vague Star Wars esc theme
 - a user should only be able to edit and view their own pieces
 ```
 
+### Technology Used:
+```md
+- Express
+- MongoDb
+- Mongoose
+- Passport
+- JavaScript
+- JQuery
+- HTML/CSS
+- Bootstrap
+```
+
 ## Wire-frames
 
 ```md
