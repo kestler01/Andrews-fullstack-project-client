@@ -1,15 +1,15 @@
 ### ScreenShots of deployed app
 ```md
 landing view
-![DeployedAppHomePage](./lib/public/Andrews-Deployed%20Art-Gallery-App.jpg)
+![DeployedAppHomePage](./public/Andrews-Deployed%20Art-Gallery-App.jpg)
 sign up form 
-![SignUpForm](./lib/public/Screen%20Shot%202021-08-20%20at%206.21.39%20PM.png)
+![SignUpForm](./public/Screen%20Shot%202021-08-20%20at%206.21.39%20PM.png)
 sign in form 
-![SignInForm](./lib/public/Screen%20Shot%202021-08-20%20at%206.21.56%20PM.png)
+![SignInForm](./public/Screen%20Shot%202021-08-20%20at%206.21.56%20PM.png)
 create piece form
-![CreatePieceForm](./lib/public/Screen%20Shot%202021-08-20%20at%206.22.12%20PM.png)
+![CreatePieceForm](./public/Screen%20Shot%202021-08-20%20at%206.22.12%20PM.png)
 user view of their created pieces, 'gallery' view
-![GalleryView](./lib/public/Screen%20Shot%202021-08-20%20at%206.24.41%20PM.png)
+![GalleryView](./public/Screen%20Shot%202021-08-20%20at%206.24.41%20PM.png)
 ```
 
 ## Links:
