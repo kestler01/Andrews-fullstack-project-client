@@ -2,7 +2,7 @@
 
 landing view
 
-![DeployedAppHomePage](./public/Andrews-Deployed%20Art-Gallery-App.jpg)
+![DeployedAppHomePage](./public/Andrews%20Deployed%20Art%20Gallery%20App.jpg)
 
 sign up form 
 
