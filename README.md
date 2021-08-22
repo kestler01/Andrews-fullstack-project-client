@@ -1,4 +1,5 @@
 ### ScreenShots of deployed app
+
 landing view
 
 ![DeployedAppHomePage](./public/Andrews-Deployed%20Art-Gallery-App.jpg)
