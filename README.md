@@ -1,16 +1,23 @@
 ### ScreenShots of deployed app
-```md
 landing view
+
 ![DeployedAppHomePage](./public/Andrews-Deployed%20Art-Gallery-App.jpg)
+
 sign up form 
+
 ![SignUpForm](./public/Screen%20Shot%202021-08-20%20at%206.21.39%20PM.png)
+
 sign in form 
+
 ![SignInForm](./public/Screen%20Shot%202021-08-20%20at%206.21.56%20PM.png)
+
 create piece form
+
 ![CreatePieceForm](./public/Screen%20Shot%202021-08-20%20at%206.22.12%20PM.png)
+
 user view of their created pieces, 'gallery' view
+
 ![GalleryView](./public/Screen%20Shot%202021-08-20%20at%206.24.41%20PM.png)
-```
 
 ## Links:
 ```md
@@ -66,9 +73,10 @@ with some modal and css in a vague Star Wars esc theme
 
 ## Wire-frames
 
-```md
 original wire-frames from initial project vision (pre V1)
-[landing page and sign in](./public/wireframe%201.jpg)
-[layout of user and piece resource views](./public/wireframe%202.jpg) 
-[idea for search bar to sort user meta data from a auth. employee view](./public/wireframe%203.jpg)
-```
+
+![landing page and sign in](./public/wireframe%201.jpg)
+
+![layout of user and piece resource views](./public/wireframe%202.jpg) 
+
+![idea for search bar to sort user meta data from a auth. employee view](./public/wireframe%203.jpg)
